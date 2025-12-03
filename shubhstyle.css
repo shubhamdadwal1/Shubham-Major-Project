@@ -1,0 +1,117 @@
+body {
+    font-family: Arial, sans-serif;
+    background: #fafafa;
+    margin: 0;
+    padding: 0;
+}
+
+.product-container {
+    display: flex;
+    gap: 40px;
+    padding: 30px;
+    max-width: 1100px;
+    margin: auto;
+}
+
+/* LEFT IMAGE */
+.product-img {
+    width: 250px;
+    height: auto;
+}
+
+/* RIGHT SIDE */
+.brand {
+    color: gray;
+    font-size: 14px;
+}
+
+.title {
+    font-size: 26px;
+    margin-top: 5px;
+    margin-bottom: 15px;
+}
+
+.stats span {
+    color: #444;
+    font-size: 14px;
+}
+
+.origin, .seller {
+    margin-top: 10px;
+    font-size: 15px;
+}
+
+/* VARIANTS */
+.variant-title {
+    margin-top: 20px;
+    margin-bottom: 10px;
+    font-weight: bold;
+}
+
+.variants {
+    display: flex;
+    gap: 10px;
+}
+
+.variant-btn {
+    padding: 10px 15px;
+    border-radius: 20px;
+    border: 1px solid #ccc;
+    background: white;
+    cursor: pointer;
+}
+
+.variant-btn.active {
+    background: #e0ffe0;
+    border-color: green;
+    font-weight: bold;
+}
+
+/* PRICE BOX */
+.price-box {
+    margin-top: 20px;
+}
+
+.price {
+    font-size: 30px;
+    margin: 0;
+}
+
+.mrp span {
+    text-decoration: line-through;
+}
+
+.tax {
+    font-size: 13px;
+    color: gray;
+}
+
+/* DISCOUNT BUTTON */
+.discount-btn {
+    margin-top: 15px;
+    padding: 8px 20px;
+    background: #e0ffe7;
+    border: 1px solid green;
+    color: green;
+    border-radius: 6px;
+}
+
+/* ADD TO CART */
+.add-btn {
+    display: block;
+    margin-top: 20px;
+    width: 250px;
+    padding: 13px;
+    font-size: 18px;
+    border: none;
+    color: white;
+    border-radius: 30px;
+    cursor: pointer;
+
+    /* GRADIENT COLOR */
+    background: linear-gradient(to right, #ff4f4f, #d40000);
+}
+
+.add-btn:hover {
+    opacity: 0.9;
+}

@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Form - Save to AWS S3</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 20px;
+        }
+        
+        .container {
+            max-width: 500px;
+            margin: 50px auto;
+            background: white;
+            padding: 40px;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+        }
+        
+        h1 {
+            color: #2c3e50;
+            text-align: center;
+            margin-bottom: 10px;
+            font-size: 28px;
+        }
+        
+        .subtitle {
+            text-align: center;
+            color: #6c757d;
+            margin-bottom: 30px;
+            font-size: 14px;
+        }
+        
+        .form-group {
+            margin-bottom: 20px;
+        }
+        
+        label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 600;
+            color: #555;
+            font-size: 14px;
+        }
+        
+        .required {
+            color: #e74c3c;
+        }
+        
+        input, textarea {
+            width: 100%;
+            padding: 12px 15px;
+            border: 2px solid #e1e8ed;
+            border-radius: 8px;
+            font-size: 16px;
+            transition: border-color 0.3s ease;
+            background-color: #f8f9fa;
+        }
+        
+        input:focus, textarea:focus {
+            outline: none;
+            border-color: #667eea;
+            background-color: white;
+            box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+        }
+        
+        textarea {
+            resize: vertical;
+            min-height: 100px;
+            font-family: inherit;
+        }
+        
+        button {
+            width: 100%;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 15px 20px;
+            border: none;
+            border-radius: 8px;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        
+        button:hover:not(:disabled) {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(102, 126, 234, 0.4);
+        }
+        
+        button:disabled {
+            background: #ccc;
+            cursor: not-allowed;
+            transform: none;
+            box-shadow: none;
+        }
+        
+        .status {
+            margin-top: 20px;
+            padding: 15px;
+            border-radius: 8px;
+            text-align: center;
+            font-weight: 500;
+            display: none;
+        }
+        
+        .status.show {
+            display: block;
+            animation: slideIn 0.3s ease;
+        }
+        
+        .success {
+            background: linear-gradient(135deg, #d4edda 0%, #c3e6cb 100%);
+            color: #155724;
+            border: 1px solid #c3e6cb;
+        }
+        
+        .error {
+            background: linear-gradient(135deg, #f8d7da 0%, #f5c6cb 100%);
+            color: #721c24;
+            border: 1px solid #f5c6cb;
+        }
+        
+        .loading {
+            background: linear-gradient(135deg, #d1ecf1 0%, #bee5eb 100%);
+            color: #0c5460;
+            border: 1px solid #bee5eb;
+        }
+        
+        @keyframes slideIn {
+            from {
+                opacity: 0;
+                transform: translateY(-10px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        .footer {
+            text-align: center;
+            margin-top: 30px;
+            color: #6c757d;
+            font-size: 14px;
+        }
+        
+        .health-check {
+            margin-top: 20px;
+            text-align: center;
+        }
+        
+        .health-check button {
+            width: auto;
+            padding: 8px 16px;
+            font-size: 12px;
+            background: #28a745;
+            text-transform: none;
+            letter-spacing: normal;
+        }
+        
+        @media (max-width: 600px) {
+            .container {
+                margin: 20px auto;
+                padding: 30px 20px;
+            }
+            
+            h1 {
+                font-size: 24px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Contact Form</h1>
+        <p class="subtitle">Submit your details - saved securely to AWS S3</p>
+        
+        <form id="contactForm">
+            <div class="form-group">
+                <label for="name">Full Name <span class="required">*</span></label>
+                <input type="text" id="name" name="name" placeholder="Enter your full name" required>
+            </div>
+            
+            <div class="form-group">
+                <label for="email">Email Address <span class="required">*</span></label>
+                <input type="email" id="email" name="email" placeholder="Enter your email address" required>
+            </div>
+            
+            <div class="form-group">
+                <label for="message">Message (Optional)</label>
+                <textarea id="message" name="message" placeholder="Enter your message here..."></textarea>
+            </div>
+            
+            <button type="submit" id="submitBtn">
+                <span id="btnText">Save to S3</span>
+            </button>
+        </form>
+        
+        <div id="status" class="status"></div>
+        
+        <div class="health-check">
+            <button type="button" onclick="checkHealth()">Test Server Connection</button>
+        </div>
+        
+        <div class="footer">
+            <p>Powered by Node.js + AWS S3</p>
+            <p>Data is securely stored in your AWS S3 bucket</p>
+        </div>
+    </div>
+
+    <script>
+        // DOM Elements
+        const form = document.getElementById('contactForm');
+        const submitBtn = document.getElementById('submitBtn');
+        const btnText = document.getElementById('btnText');
+        const statusDiv = document.getElementById('status');
+
+        // Form submission handler
+        form.addEventListener('submit', async (e) => {
+            e.preventDefault();
+            
+            // Collect form data
+            const formData = {
+                name: e.target.name.value.trim(),
+                email: e.target.email.value.trim(),
+                message: e.target.message.value.trim()
+            };
+
+            // Validate required fields
+            if (!formData.name || !formData.email) {
+                showStatus('Please fill in all required fields.', 'error');
+                return;
+            }
+
+            // Validate email format
+            if (!isValidEmail(formData.email)) {
+                showStatus('Please enter a valid email address.', 'error');
+                return;
+            }
+
+            // Update UI for loading state
+            const originalText = btnText.textContent;
+            setLoadingState(true, originalText);
+            showStatus('📤 Saving your data to AWS S3...', 'loading');
+
+            try {
+                // Submit to backend API
+                const response = await fetch('/submit-form', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                        'Accept': 'application/json'
+                    },
+                    body: JSON.stringify(formData)
+                });
+
+                const result = await response.json();
+
+                if (result.success) {
+                    showStatus(`✅ ${result.message}`, 'success');
+                    form.reset(); // Clear the form
+                    console.log('✅ Form submitted successfully:', result);
+                } else {
+                    throw new Error(result.error || 'Submission failed');
+                }
+                
+            } catch (error) {
+                console.error('❌ Submission error:', error);
+                
+                let errorMessage = 'Submission failed. ';
+                if (error.message.includes('fetch')) {
+                    errorMessage += 'Cannot connect to server. Please check if the server is running.';
+                } else {
+                    errorMessage += error.message;
+                }
+                
+                showStatus(`❌ ${errorMessage}`, 'error');
+            } finally {
+                // Reset button state
+                setLoadingState(false, originalText);
+            }
+        });
+
+        // Helper Functions
+        function setLoadingState(isLoading, originalText) {
+            submitBtn.disabled = isLoading;
+            btnText.textContent = isLoading ? 'Submitting...' : originalText;
+        }
+
+        function showStatus(message, type) {
+            statusDiv.innerHTML = message;
+            statusDiv.className = `status ${type} show`;
+            
+            // Auto-hide success messages after 5 seconds
+            if (type === 'success') {
+                setTimeout(() => {
+                    statusDiv.classList.remove('show');
+                }, 5000);
+            }
+        }
+
+        function isValidEmail(email) {
+            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            return emailRegex.test(email);
+        }
+
+        // Health check function
+        async function checkHealth() {
+            try {
+                const response = await fetch('/health');
+                const result = await response.json();
+                
+                if (result.status === 'OK') {
+                    showStatus('✅ Server is running correctly!', 'success');
+                } else {
+                    showStatus('⚠️ Server responded but status is not OK', 'error');
+                }
+            } catch (error) {
+                showStatus('❌ Cannot connect to server. Please start the server first.', 'error');
+            }
+        }
+
+        // Form validation feedback
+        document.getElementById('name').addEventListener('blur', function() {
+            if (this.value.trim() === '') {
+                this.style.borderColor = '#e74c3c';
+            } else {
+                this.style.borderColor = '#28a745';
+            }
+        });
+
+        document.getElementById('email').addEventListener('blur', function() {
+            if (!isValidEmail(this.value)) {
+                this.style.borderColor = '#e74c3c';
+            } else {
+                this.style.borderColor = '#28a745';
+            }
+        });
+
+        // Clear validation styling when user types
+        document.querySelectorAll('input, textarea').forEach(field => {
+            field.addEventListener('input', function() {
+                if (statusDiv.classList.contains('error')) {
+                    statusDiv.classList.remove('show');
+                }
+                this.style.borderColor = '#e1e8ed';
+            });
+        });
+
+        // Show welcome message on page load
+        window.addEventListener('load', function() {
+            setTimeout(() => {
+                showStatus('💡 Fill out the form and click "Save to S3" to test the integration!', 'loading');
+            }, 1000);
+        });
+    </script>
+</body>
+</html>

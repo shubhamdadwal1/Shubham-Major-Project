@@ -1,0 +1,611 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PharmaShop</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="https://unpkg.com/swiper@8/swiper-bundle.min.css">
+    <link rel="stylesheet" href="style.css">
+    
+    
+</head>
+<body>
+ 
+    <!-- header section starts -->
+    <header class="header">
+        <div class="header1">
+            <a href="#" class="logo"><i class="fas fa-first-aid"></i> PHARMA SHOP</a>
+            <form action="" class="search-form">
+                <input type="text" placeholder="Search for products or brands..." id="search-box">
+                <label for="search-box" class="fas fa-search"></label>
+            </form>
+            <div class="icons">
+                <div id="search-btn" class="fas fa-search"></div>
+                <a href="heart.html" class="fas fa-heart"></a>
+                
+                <a href="cart.html" class="cart-icon">
+    🛒 <span id="cart-count">0</span>
+</a>
+
+                <div id="login-btn" class="fas fa-user"></div>
+            </div>
+        </div>
+
+        <div class="header2">
+            <nav class="navbar">
+                <a href="#home">Home</a>
+                <a href="#medicine">Medicines</a>
+                <a href="#consultation">Consultation</a>
+                <a href="#cosmetics">Cosmetics</a>
+                <a href="#reviews">Customer Reviews</a>
+                <a href="#footer">Contact</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- bottom nav -->
+    <nav class="bottom-navbar">
+        <a href="#home" class="fas fa-home"></a>
+        <a href="#medicine" class="fas fa-list"></a>
+        <a href="#consultation" class="fas fa-user-md"></a>
+        <a href="#cosmetics" class="fas fa-magic"></a>
+        <a href="#reviews" class="fas fa-comments"></a>
+        <a href="#footer" class="fas fa-phone"></a>
+    </nav>
+    
+    <!-- login form -->
+    <div class="login-form-container">
+        <div id="close-login-btn" class="fas fa-times"></div>
+        <form action="">
+            <h3>Login</h3>
+            <span>Email</span>
+            <input type="email" class="box" placeholder="Enter your email">
+            <span>Password</span>
+            <input type="password" class="box" placeholder="Enter your password">
+            <div class="checkbox">
+                <input type="checkbox" id="remember-me">
+                <label for="remember-me">Remember me</label>
+            </div>
+            <input type="submit" value="Sign In" class="btn">
+            <p>Forgot password? <a href="#">Click here</a></p>
+            <p>Don’t have an account? <a href="#">Create one</a></p>
+        </form>
+    </div>
+
+    <!-- home section -->
+    <section class="home" id="home">
+        <div class="row">
+            <div class="content">
+                <h3>Welcome to PharmaShop</h3>
+                <p>Your trusted online pharmacy for quality medicines and healthcare products at the best prices.</p>
+            </div>
+            <div class="swiper books-slider">
+                <div class="swiper-wrapper">
+                    <a href="#" class="swiper-slide"><img src="p8.png" alt=""></a>
+                    <a href="#" class="swiper-slide"><img src="p1.png" alt=""></a>
+                    <a href="#" class="swiper-slide"><img src="p2.png" alt=""></a>
+                    <a href="#" class="swiper-slide"><img src="p3.png" alt=""></a>
+                    <a href="#" class="swiper-slide"><img src="p4.png" alt=""></a>
+                    <a href="#" class="swiper-slide"><img src="p5.png" alt=""></a>
+                    <a href="#" class="swiper-slide"><img src="p6.png" alt=""></a>
+                    <a href="#" class="swiper-slide"><img src="p7.png" alt=""></a>
+                    <a href="#" class="swiper-slide"><img src="p8.png" alt=""></a>
+                </div>
+                <img src="stand.png" class="stand" alt="">
+            </div>
+        </div>
+    </section>
+
+    <!-- icons section -->
+    <section class="icons-container">
+        <div class="icons">
+            <i class="fas fa-plane"></i>
+            <div class="content">
+                <h3>Free Delivery</h3>
+                <p>On orders above ₹500</p>
+            </div>
+        </div>
+        <div class="icons">
+            <i class="fas fa-lock"></i>
+            <div class="content">
+                <h3>Secure Payment</h3>
+                <p>100% Safe and Secure</p>
+            </div>
+        </div>
+        <div class="icons">
+            <i class="fas fa-redo-alt"></i>
+            <div class="content">
+                <h3>Easy Returns</h3>
+                <p>3-day Return Policy</p>
+            </div>
+        </div>
+        <div class="icons">
+            <i class="fas fa-headset"></i>
+            <div class="content">
+                <h3>24/7 Support</h3>
+                <p>We’re here to help you anytime</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- featured section -->
+    <section class="featured" id="medicine">
+        <h1 class="heading"><span> Best Offers Medicines</span></h1>
+        <div class="swiper featured-slider">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide box">
+                    <div class="icons">
+                        <a href="#" class="fas fa-heart"></a>
+                    </div>
+                    <div class="image">
+                        <img src="bop1.png" alt="">
+                    </div>
+                    <div class="content">
+                        <h3>Paracetamol</h3>
+                        <div class="price">₹239 <span>MRP ₹599</span></div>
+                        <a href="shubh.html" class="btn">Order Now</a>
+                    </div>
+                </div>
+                <div class="swiper-slide box">
+                    <div class="icons">
+                        <a href="#" class="fas fa-heart"></a>
+                    </div>
+                    <div class="image">
+                        <img src="m1.png" alt="">
+                    </div>
+                    <div class="content">
+                        <h3>Cetjoint SG Soft Gelatin Capsule</h3>
+                        <div class="price">₹2099 <span>MRP ₹2249</span></div>
+                        <a href="shubh1.html" class="btn">Order Now</a>
+                    </div>
+                </div>
+                <div class="swiper-slide box">
+                    <div class="icons">
+                        <a href="#" class="fas fa-heart"></a>
+                    </div>
+                    <div class="image">
+                        <img src="bo1.png" alt="">
+                    </div>
+                    <div class="content">
+                        <h3>Combo Pack of Revital H for Woman Tablet & Neurobion Forte Tablet</h3>
+                        <div class="price">₹349 <span>MRP ₹589</span></div>
+                        <a href="shubh2.html" class="btn">Order Now</a>
+                    </div>
+                </div>
+                <div class="swiper-slide box">
+                    <div class="icons">
+                        <a href="shubh.html" class="fas fa-heart"></a>
+                    </div>
+                    <div class="image">
+                        <img src="bo3.png" alt="">
+                    </div>
+                    <div class="content">
+                        <h3>Four Seasons Giloy (Guduchi) Powder</h3>
+                        <div class="price">₹499 <span>MRP ₹759</span></div>
+                        <a href="shubh3.html" class="btn">Order Now</a>
+                    </div>
+                </div>
+                <div class="swiper-slide box">
+                    <div class="icons">
+                        <a href="shubh.html" class="fas fa-heart"></a>
+                    </div>
+                    <div class="image">
+                        <img src="op2.png" alt="">
+                    </div>
+                    <div class="content">
+                        <h3>HealthOK Multivitamin For Men with Vitamins</h3>
+                        <div class="price">₹159 <span>MRP ₹599</span></div>
+                        <a href="shubh.html" class="btn">Order Now</a>
+                    </div>
+                </div>
+                <div class="swiper-slide box">
+                    <div class="icons">
+                        <a href="#" class="fas fa-heart"></a>
+                    </div>
+                    <div class="image">
+                        <img src="bo4.png" alt="">
+                    </div>
+                    <div class="content">
+                        <h3>Vitamin C + with Vitamin D3</h3>
+                        <div class="price">₹199 <span>MRP ₹629</span></div>
+                        <a href="shubh.html" class="btn">Order Now</a>
+                    </div>
+                </div>
+                <div class="swiper-slide box">
+                    <div class="icons">
+                        <a href="#" class="fas fa-heart"></a>
+                    </div>
+                    <div class="image">
+                        <img src="bo5.png" alt="">
+                    </div>
+                    <div class="content">
+                        <h3>Briyo Garlic Oil</h3>
+                        <div class="price">₹499 <span>MRP ₹999</span></div>
+                        <a href="shubh.html" class="btn">Order Now</a>
+                    </div>
+                </div>
+                <div class="swiper-slide box">
+                    <div class="icons">
+                        <a href="#" class="fas fa-heart"></a>
+                    </div>
+                    <div class="image">
+                        <img src="bo6.png" alt="">
+                    </div>
+                    <div class="content">
+                        <h3>TrueBasics Advanced Multivitamin for Women</h3>
+                        <div class="price">₹429 <span>MRP ₹789</span></div>
+                        <a href="shubh.html" class="btn">Order Now</a>
+                    </div>
+                </div>
+                
+                <!-- More medicine items can go here -->
+            </div>
+            <div class="swiper-button-next"></div>
+            <div class="swiper-button-prev"></div>
+        </div>
+    </section>
+
+    <!-- VS medicine-->
+     <section class="featured" id="medicine">
+        <h1 class="heading"><span> Vitamins and Supplements Medicines</span></h1>
+        <div class="swiper featured-slider">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide box">
+                    <div class="icons">
+                        <a href="#" class="fas fa-heart"></a>
+                    </div>
+                    <div class="image">
+                        <img src="VS1.png" alt="">
+                    </div>
+                    <div class="content">
+                        <h3>Tata 1mg Vitonnix Vitamin D Sublingual Oral Spray</h3>
+                        <div class="price">₹418 <span> MRP ₹599</span></div>
+                        <a href="shubh.html" class="btn">Order Now</a>
+                    </div>
+                </div>
+                <div class="swiper-slide box">
+                    <div class="icons">
+                        <a href="#" class="fas fa-heart"></a>
+                    </div>
+                    <div class="image">
+                        <img src="VS2.png" alt="">
+                    </div>
+                    <div class="content">
+                        <h3>Neurobion Forte Tablet with Vitamin B12 </h3>
+                        <div class="price">₹2099 <span>MRP ₹2249</span></div>
+                        <a href="shubh.html" class="btn">Order Now</a>
+                    </div>
+                </div>
+                <div class="swiper-slide box">
+                    <div class="icons">
+                        <a href="#" class="fas fa-heart"></a>
+                    </div>
+                    <div class="image">
+                        <img src="VS3.png" alt="">
+                    </div>
+                    <div class="content">
+                        <h3>Centrum Women Vegetarian Tablets</h3>
+                        <div class="price">₹425 <span>MRP ₹590</span></div>
+                        <a href="shubh.html" class="btn">Order Now</a>
+                    </div>
+                </div>
+                <div class="swiper-slide box">
+                    <div class="icons">
+                        <a href="shubh.html" class="fas fa-heart"></a>
+                    </div>
+                    <div class="image">
+                        <img src="VS4.png" alt="">
+                    </div>
+                    <div class="content">
+                        <h3>Trexgenics MegaMag with Magnesium Bis-Glycinate </h3>
+                        <div class="price">₹978 <span>MRP ₹1345</span></div>
+                        <a href="vc.html" class="btn">Order Now</a>
+                    </div>
+                </div>
+                <div class="swiper-slide box">
+                    <div class="icons">
+                        <a href="shubh.html" class="fas fa-heart"></a>
+                    </div>
+                    <div class="image">
+                        <img src="VS5.png" alt="">
+                    </div>
+                    <div class="content">
+                        <h3>Visionguard Capsule</h3>
+                        <div class="price">₹276 <span>MRP ₹509</span></div>
+                        <a href="shubh.html" class="btn">Order Now</a>
+                    </div>
+                </div>
+                <div class="swiper-slide box">
+                    <div class="icons">
+                        <a href="#" class="fas fa-heart"></a>
+                    </div>
+                    <div class="image">
+                        <img src="VS6.png" alt="">
+                    </div>
+                    <div class="content">
+                        <h3>Fithance Eye Care Liqui-Pellet Capsule</h3>
+                        <div class="price">₹760 <span>MRP ₹867</span></div>
+                        <a href="shubh.html" class="btn">Order Now</a>
+                    </div>
+                
+                </div>
+                <!-- More medicine items can go here -->
+            </div>
+            <div class="swiper-button-next"></div>
+            <div class="swiper-button-prev"></div>
+        </div>
+    </section>
+    <!-- heart-->
+     <section class="featured" id="medicine">
+        <h1 class="heading"><span> Heart Medicines</span></h1>
+        <div class="swiper featured-slider">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide box">
+                    <div class="icons">
+                        <a href="#" class="fas fa-heart"></a>
+                    </div>
+                    <div class="image">
+                        <img src="hm1.png" alt="">
+                    </div>
+                    <div class="content">
+                        <h3>Procter & Gamble</h3>
+                        <div class="price">₹79 <span> MRP ₹99</span></div>
+                        <a href="HM.html" class="btn">Order Now</a>
+                    </div>
+                </div>
+                <div class="swiper-slide box">
+                    <div class="icons">
+                        <a href="#" class="fas fa-heart"></a>
+                    </div>
+                    <div class="image">
+                        <img src="hm2.png" alt="">
+                    </div>
+                    <div class="content">
+                        <h3>Zenius Heart Care Capsule 60's</h3>
+                        <div class="price">₹649 <span>₹1499</span></div>
+                        <a href="hm2.html" class="btn">Order Now</a>
+                    </div>
+                </div>
+                <div class="swiper-slide box">
+                    <div class="icons">
+                        <a href="#" class="fas fa-heart"></a>
+                    </div>
+                    <div class="image">
+                        <img src="hm3.png" alt="">
+                    </div>
+                    <div class="content">
+                        <h3>Goodcare Good Heart Herbal Heart Care Capsule 60's</h3>
+                        <div class="price">₹278 <span>MRP ₹980</span></div>
+                        <a href="HM3.html" class="btn">Order Now</a>
+                    </div>
+                </div>
+                <div class="swiper-slide box">
+                    <div class="icons">
+                        <a href="shubh.html" class="fas fa-heart"></a>
+                    </div>
+                    <div class="image">
+                        <img src="hm4.png" alt="">
+                    </div>
+                    <div class="content">
+                        <h3>Zenius Cholesterol Care Capsule 60's</h3>
+                        <div class="price">₹276 <span>₹534</span></div>
+                        <a href="HM4.html" class="btn">Order Now</a>
+                    </div>
+                </div>
+                <div class="swiper-slide box">
+                    <div class="icons">
+                        <a href="shubh.html" class="fas fa-heart"></a>
+                    </div>
+                    <div class="image">
+                        <img src="hm5.png" alt="">
+                    </div>
+                    <div class="content">
+                        <h3>Kapiva Dia Free Juice 1 ltr</h3>
+                        <div class="price">₹499 <span>₹549</span></div>
+                        <a href="HM5.html" class="btn">Order Now</a>
+                    </div>
+                </div>
+                
+                 </div>
+            <div class="swiper-button-next"></div>
+            <div class="swiper-button-prev"></div>
+        </div>
+    </section>
+
+    <!-- consultation section -->
+    <section class="deal" id="consultation">
+        <div class="content">
+            <form action="">
+                <h3>Consult Our Pharmacist</h3>
+                <div class="fields">
+                    <div class="field name">
+                        <input type="text" placeholder="Name" required>
+                    </div>
+                    <div class="field email">
+                        <input type="email" placeholder="Email" required>
+                    </div>
+                </div>
+                <div class="field">
+                    <input type="text" placeholder="Subject" required>
+                </div>
+                <div class="field textarea">
+                    <textarea cols="30" rows="10" placeholder="Your message..." required></textarea>
+                </div>
+                <input type="submit" value="Send" class="btn">
+            </form>
+        </div>
+        <div class="image">
+            <h2>Pharmacist <span>Dr.Naresh Trehan</span></h2>
+            <img src="OIP (1).webp" alt="">
+        </div>
+    </section>
+
+    <!-- cosmetics section -->
+    <section class="arrivals" id="cosmetics">
+        <h1 class="heading"><span>Cosmetics</span></h1>
+        <div class="swiper arrivals-slider">
+            <div class="swiper-wrapper">
+                <a href="#" class="swiper-slide box">
+                    <div class="image">
+                        <img src="cos1.jpeg" alt="">
+                    </div>
+                    <div class="content">
+                        <h3>Beauty Cream</h3>
+                        <div class="price">₹200 <span>₹500</span></div>
+                        <div class="stars">
+                            <i class="fas fa-star"></i><i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i><i class="fas fa-star"></i>
+                            <i class="fas fa-star-half-alt"></i>
+                        </div>
+                        
+                    </div>
+                </a>
+                <a href="" class="swiper-slide box">
+                    <div class="image">
+                        <img src="be1.png" alt="">
+                    </div>
+                    <div class="content">
+                        <h3>Plum Bodylovin' Vanilla Vibes Body Mist 150 Ml</h3>
+                        <div class="price">₹440 <span>₹550</span></div>
+                        <div class="stars">
+                            <i class="fas fa-star"></i><i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i><i class="fas fa-star"></i>
+                            <i class="fas fa-star-half-alt"></i>
+                        </div>
+                        
+                         <div class="btn">Order Now</div>
+                    </div>
+                </a>
+                <a href="" class="swiper-slide box">
+                    <div class="image">
+                        <img src="be2.png" alt="">
+                    </div>
+                    <div class="content">
+                        <h3>Cetaphil Moisturising Cream</h3>
+                        <div class="price">₹2099 <span>₹2599</span></div>
+                        <div class="stars">
+                            <i class="fas fa-star"></i><i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i><i class="fas fa-star"></i>
+                            <i class="fas fa-star-half-alt"></i>
+                        </div>
+                       
+                         <div class="btn">Order Now</div>
+                    </div>
+                </a>
+                <a href="" class="swiper-slide box">
+                    <div class="image">
+                        <img src="be3.png" alt="">
+                    </div>
+                    <div class="content">
+                        <h3>Venusia Max Intensive Moisturizing Lotion </h3>
+                        <div class="price">₹899 <span>₹1099</span></div>
+                        <div class="stars">
+                            <i class="fas fa-star"></i><i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i><i class="fas fa-star"></i>
+                            <i class="fas fa-star-half-alt"></i>
+                        </div>
+                        <div>
+                    
+                     <div class="btn">Order Now</div>
+                    </div>
+                    </div>
+                </a>
+                <a href="be4.html" class="swiper-slide box">
+                    <div class="image">
+                        <img src="be4.png" alt="">
+                    </div>
+                    <div class="content">
+                        <h3>Nivea Soft Light Moisturising Cream</h3>
+                        <div class="price">₹449 <span>₹659</span></div>
+                        <div class="stars">
+                            <i class="fas fa-star"></i><i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i><i class="fas fa-star"></i>
+                            <i class="fas fa-star-half-alt"></i>
+                        </div>
+                       
+                        <div class="btn">Order Now</div>
+                    </div>
+                </a>
+                
+                <!-- More cosmetics slides here -->
+            </div>
+        </div>
+    </section>
+
+    <!-- reviews section -->
+    <section class="reviews" id="reviews">
+        <h1 class="heading"><span>Customer Reviews</span></h1>
+        <div class="swiper reviews-slider">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide box">
+                    <img src="shubhhh.jpg" alt="">
+                    <h3>Shubham Dadwal</h3>
+                    <p>Excellent service and fast delivery! Very satisfied with the product quality.</p>
+                    <div class="stars">
+                        <i class="fas fa-star"></i><i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i><i class="fas fa-star"></i>
+                        <i class="fas fa-star-half-alt"></i>
+                    </div>
+                </div>
+                <div class="swiper-slide box">
+                    <img src="mankkuuuuu.jpg" alt="">
+                    <h3>Mayank Sharma</h3>
+                    <p>The delivery was extremely fast, and the packaging was secure. The product quality is excellent—worth every rupee!</p>
+                    <div class="stars">
+                        <i class="fas fa-star"></i><i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i><i class="fas fa-star"></i>
+                        <i class="fas fa-star-half-alt"></i>
+                    </div>
+                </div>
+                <div class="swiper-slide box">
+                    <img src="WhatsApp Image 2025-11-18 at 11.34.18 AM.jpeg" alt="">
+                    <h3>Arsh Dadwal</h3>
+                    <p>I received my order sooner than expected. The product feels premium, and the overall experience was fantastic.</p>
+                    <div class="stars">
+                        <i class="fas fa-star"></i><i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i><i class="fas fa-star"></i>
+                        <i class="fas fa-star-half-alt"></i>
+                    </div>
+                </div>
+                <div class="swiper-slide box">
+                    <img src="WhatsApp Image 2025-11-18 at 11.37.38 AM.jpeg" alt="">
+                    <h3>Ishit Atwal</h3>
+                    <p>Amazing service! Quick delivery, solid packaging, and high-quality product. Will definitely order again.</p>
+                    <div class="stars">
+                        <i class="fas fa-star"></i><i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i><i class="fas fa-star"></i>
+                        <i class="fas fa-star-half-alt"></i>
+                    </div>
+                </div>
+                <!-- Add more reviews here -->
+            </div>
+        </div>
+    </section>
+
+    <!-- footer section -->
+    <section class="footer" id="footer">
+        <div class="share">
+            <h3>Contact Us</h3>
+            <a href="tel:+9188470-84945" class="fas fa-phone"></a> 
+            <a href="mail:dadwalshubham096@gmail.com" class="fas fa-envelope"></a>
+            <a href="#" class="fab fa-facebook-f"></a>
+            <a href="#" class="fab fa-twitter"></a>
+            <a href="#" class="fab fa-instagram"></a>
+            <a href="#" class="fab fa-linkedin"></a>
+        </div>
+        <div class="credit">
+            <div>Created by <span>Shubham And Mayank</span> | All rights reserved © 2025</div>
+        </div>
+    </section>
+
+    <!-- loader -->
+    <div class="loader-container" time ="1">
+        <img src="loader.gif" alt="">
+    </div>
+    
+    <script src="https://unpkg.com/swiper@8/swiper-bundle.min.js"></script>
+    <script src="js.js"></script>
+</body>
+</html>

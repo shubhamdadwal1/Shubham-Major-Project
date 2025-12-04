@@ -29,6 +29,7 @@
     🛒 <span id="cart-count">0</span>
 </a>
 
+
                 <div id="login-btn" class="fas fa-user"></div>
             </div>
         </div>
@@ -37,7 +38,7 @@
             <nav class="navbar">
                 <a href="#home">Home</a>
                 <a href="#medicine">Medicines</a>
-                <a href="#consultation">Consultation</a>
+                <a href="#consultation">Consultation</a>k;l
                 <a href="#cosmetics">Cosmetics</a>
                 <a href="#reviews">Customer Reviews</a>
                 <a href="#footer">Contact</a>
@@ -197,7 +198,7 @@
                     <div class="content">
                         <h3>HealthOK Multivitamin For Men with Vitamins</h3>
                         <div class="price">₹159 <span>MRP ₹599</span></div>
-                        <a href="shubh.html" class="btn">Order Now</a>
+                        <a href="shubh4.html" class="btn">Order Now</a>
                     </div>
                 </div>
                 <div class="swiper-slide box">
@@ -459,7 +460,7 @@
                             <i class="fas fa-star"></i><i class="fas fa-star"></i>
                             <i class="fas fa-star-half-alt"></i>
                         </div>
-                        
+                         <div class="btn">Order Now</div>
                     </div>
                 </a>
                 <a href="" class="swiper-slide box">
@@ -607,5 +608,38 @@
     
     <script src="https://unpkg.com/swiper@8/swiper-bundle.min.js"></script>
     <script src="js.js"></script>
+ <!-- new code changes -->
+    <script type="module">
+  // Firebase SDK imports
+  import { initializeApp } from "https://www.gstatic.com/firebasejs/10.14.1/firebase-app.js";
+  import { getFirestore } from "https://www.gstatic.com/firebasejs/10.14.1/firebase-firestore.js";
+  import { getAuth } from "https://www.gstatic.com/firebasejs/10.14.1/firebase-auth.js";
+
+  // Your Firebase configuration
+  const firebaseConfig = {
+    apiKey: "AIzaSyCCZKk3KIrNPclBHGQBPka-pVthWg6LLUo",
+    authDomain: "fir-project-17726.firebaseapp.com",
+    projectId: "fir-project-17726",
+    storageBucket: "fir-project-17726.appspot.com",
+    messagingSenderId: "530060513770",
+    appId: "1:530060513770:web:5e3c501d866beb18c56293",
+    measurementId: "G-46ZDQQ92FE"
+  };
+
+  // Initialize Firebase
+  const app = initializeApp(firebaseConfig);
+
+  // Optional services:
+  const db = getFirestore(app);
+  const auth = getAuth(app);
+
+  console.log("🔥 Firebase Connected Successfully");
+</script>
+<script>
+    // Load stored cart value on page load
+    let count = localStorage.getItem("cartCount") || 0;
+    document.getElementById("cart-count").textContent = count;
+</script>
+
 </body>
 </html>
